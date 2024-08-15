@@ -30,8 +30,11 @@ const Layout = ({ children }: LayoutProps) => {
                           className="w3-bar-item w3-button w3-hover-none w3-hover-text-blue">Projects</Link>
                     <Link href="/Contact"
                           className="w3-bar-item w3-button w3-hover-none w3-hover-text-blue">Contact</Link>
-                    <a href="/api/auth/login">Login</a>
-                    <a href="/api/auth/logout">Logout</a>
+                    <Link href="/register"
+                          className="w3-bar-item w3-button w3-hover-none w3-hover-text-blue">Register</Link>
+                    <Link href="/login"
+                          className="w3-bar-item w3-button w3-hover-none w3-hover-text-blue">Login</Link>
+
                 </nav>
             </header>
             <main className="flex-main">

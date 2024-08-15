@@ -30,6 +30,10 @@ yarn-error.log*
 
 .env
 
+.sqldiff.exe
+.sqlite3.exe
+.sqlite3_analyzer.exe
+
 # vercel
 .vercel
 
