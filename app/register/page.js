@@ -21,11 +21,15 @@ export default function Register() {
 
         if (res.ok) {
             localStorage.setItem('credentials', JSON.stringify({ username, password }));
-            router.push('/credentials');
+            router.push('/credentials'); // Redirect to the credentials page
+            setTimeout(() => {
+                window.location.reload(); // Refresh the page after a short delay
+            }, 100); // 100ms delay to ensure redirection happens first
         } else {
             alert('Registration failed.');
         }
     };
+
 
     return (
         <form onSubmit={handleSubmit}>

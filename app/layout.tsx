@@ -1,3 +1,4 @@
+import NavBar from "@/navbar";
 import { ReactNode } from 'react';
 import Link from 'next/link';
 import './globals.css';
@@ -23,18 +24,7 @@ const Layout = ({ children }: LayoutProps) => {
         <div className="flex-container">
             <header>
                 <nav>
-                    <Link href="/" className="w3-bar-item w3-button w3-hover-none w3-hover-text-blue">Home</Link>
-                    <Link href="/Education" className="w3-bar-item w3-button w3-hover-none w3-hover-text-blue">Education
-                        & Skills</Link>
-                    <Link href="/Projects"
-                          className="w3-bar-item w3-button w3-hover-none w3-hover-text-blue">Projects</Link>
-                    <Link href="/Contact"
-                          className="w3-bar-item w3-button w3-hover-none w3-hover-text-blue">Contact</Link>
-                    <Link href="/register"
-                          className="w3-bar-item w3-button w3-hover-none w3-hover-text-blue">Register</Link>
-                    <Link href="/login"
-                          className="w3-bar-item w3-button w3-hover-none w3-hover-text-blue">Login</Link>
-
+                    <NavBar />
                 </nav>
             </header>
             <main className="flex-main">

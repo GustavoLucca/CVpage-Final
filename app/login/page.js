@@ -2,11 +2,13 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import {useAuth} from "../../useAuth";
 
 export default function Login() {
+    const { setIsLoggedIn } = useAuth();
+    const router = useRouter();
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
-    const router = useRouter();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -20,11 +22,16 @@ export default function Login() {
 
         if (res.ok) {
             localStorage.setItem('credentials', JSON.stringify({ username, password }));
-            router.push('/credentials');
+            setIsLoggedIn(true);
+            router.push('/credentials'); // Redirect to the credentials page
+            setTimeout(() => {
+                window.location.reload(); // Refresh the page after a short delay
+            }, 100); // 100ms delay to ensure redirection happens first
         } else {
             alert('Login failed.');
         }
     };
+
 
     return (
         <form onSubmit={handleSubmit}>
